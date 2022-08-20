@@ -12,7 +12,6 @@ const generateQR = () => {
         "href",
         `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${link}`
       );
-    document.getElementById("qr_img").style.display = "flex";
   } else {
     alert("Enter Link Or Text Please!");
   }
@@ -23,5 +22,4 @@ text.addEventListener("focusin", () => {
   document.getElementById("downloadBtn").style.display = "none";
   let imgQR = document.getElementById("qrImg");
   imgQR.src = `qr-code.png`;
-  document.getElementById("qr_img").style.display = "none";
 });
