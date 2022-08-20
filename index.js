@@ -3,8 +3,6 @@ const generateQR = () => {
   if (link !== "") {
     let imgQR = document.getElementById("qrImg");
     imgQR.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${link}`;
-    console.log("DOne");
-    document.getElementById("downloadBtn").style.display = "block";
     document.getElementById("qrText").value = "";
     document
       .getElementById("downloadLink")
@@ -12,6 +10,10 @@ const generateQR = () => {
         "href",
         `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${link}`
       );
+    let qrImg = document.getElementById("qrImg");
+    qrImg.addEventListener("load", () => {
+      document.getElementById("downloadBtn").style.display = "block";
+    });
   } else {
     alert("Enter Link Or Text Please!");
   }
